@@ -25,5 +25,6 @@ model = LinearRegression()
 model.fit(X, y)
 
 
-joblib.dump(model, 'models/calorie_model.pkl')
+joblib.dump(model, 'calorie_model.pkl')
 print('Model trained and saved')
+
