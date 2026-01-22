@@ -71,7 +71,7 @@ activity = activity_factor(activity_label)
 
 # ================= GENERATE PLAN =================
 if st.button("🚀 Generate Today’s Plan"):
-    model = joblib.load("models/calorie_model.pkl")
+    model = joblib.load("calorie_model.pkl")
 
     input_df = pd.DataFrame([{
         "age": age,
@@ -180,5 +180,6 @@ if st.session_state.plan_generated:
     st.success(f"🥗 Diet completion: {int((consumed_cal/total_cal)*100)}%")
 
     st.caption("✅ Automatically resets every day • Stay consistent")
+
 
 
