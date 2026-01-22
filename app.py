@@ -4,9 +4,9 @@ import pandas as pd
 import datetime
 import plotly.express as px
 
-from utils.workout_planner import generate_workout
-from utils.diet_planner import generate_diet
-from utils.helpers import calculate_bmi, activity_factor
+from workout_planner import generate_workout
+from diet_planner import generate_diet
+from helpers import calculate_bmi, activity_factor
 
 
 # ================= PAGE CONFIG =================
@@ -180,3 +180,4 @@ if st.session_state.plan_generated:
     st.success(f"🥗 Diet completion: {int((consumed_cal/total_cal)*100)}%")
 
     st.caption("✅ Automatically resets every day • Stay consistent")
+
