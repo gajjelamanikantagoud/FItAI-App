@@ -15,7 +15,7 @@ st.set_page_config(page_title="AI Fitness Planner", layout="wide")
 
 # ================= LOAD CSS =================
 def load_css():
-    with open("assets/styles.css") as f:
+    with open("styles.css") as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 load_css()
@@ -180,4 +180,5 @@ if st.session_state.plan_generated:
     st.success(f"🥗 Diet completion: {int((consumed_cal/total_cal)*100)}%")
 
     st.caption("✅ Automatically resets every day • Stay consistent")
+
 
