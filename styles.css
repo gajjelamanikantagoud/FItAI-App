@@ -1,0 +1,183 @@
+/* ================= ROOT THEME ================= */
+:root {
+    --bg-main: #020617;
+    --bg-card: rgba(15, 23, 42, 0.75);
+    --border-subtle: rgba(148, 163, 184, 0.15);
+
+    --accent-primary: #00f5d4;
+    --accent-secondary: #38bdf8;
+    --accent-success: #22c55e;
+    --accent-warning: #f97316;
+    --accent-danger: #ef4444;
+
+    --text-main: #e5e7eb;
+    --text-muted: #94a3b8;
+
+    --radius-lg: 16px;
+    --radius-md: 12px;
+    --radius-sm: 8px;
+}
+
+/* ================= GLOBAL ================= */
+body {
+    background: radial-gradient(
+        circle at top left,
+        #0f172a,
+        #020617 60%
+    );
+    color: var(--text-main);
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont;
+}
+
+/* ================= HEADINGS ================= */
+h1, h2, h3 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--accent-primary);
+}
+
+h1 {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
+h2 {
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+}
+
+/* ================= CARD STYLE (SHADCN FEEL) ================= */
+.block-container {
+    padding: 2rem 2.5rem;
+}
+
+section[data-testid="stVerticalBlock"] {
+    background: var(--bg-card);
+    backdrop-filter: blur(14px);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+section[data-testid="stVerticalBlock"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* ================= INPUTS ================= */
+.stNumberInput input,
+.stSelectbox select,
+.stSlider input {
+    border-radius: var(--radius-sm);
+    background: #020617;
+    border: 1px solid var(--border-subtle);
+    color: var(--text-main);
+}
+
+.stNumberInput input:focus,
+.stSelectbox select:focus {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 2px rgba(0, 245, 212, 0.25);
+}
+
+/* ================= BUTTON ================= */
+.stButton > button {
+    background: linear-gradient(
+        90deg,
+        var(--accent-primary),
+        var(--accent-secondary)
+    );
+    color: #020617;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    padding: 0.65em 1.6em;
+    border: none;
+    transition: all 0.25s ease;
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.35);
+}
+
+/* ================= CHECKBOX ================= */
+.stCheckbox {
+    padding: 0.3rem 0;
+}
+
+.stCheckbox > label {
+    font-size: 0.95rem;
+    color: var(--text-main);
+    transition: color 0.2s ease;
+}
+
+.stCheckbox input:checked + div {
+    border-color: var(--accent-success);
+}
+
+/* ================= METRIC CARDS ================= */
+[data-testid="metric-container"] {
+    background: linear-gradient(
+        135deg,
+        rgba(2, 6, 23, 0.9),
+        rgba(15, 23, 42, 0.9)
+    );
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 1.2rem;
+    transition: transform 0.25s ease;
+}
+
+[data-testid="metric-container"]:hover {
+    transform: translateY(-3px);
+}
+
+/* ================= DIVIDERS ================= */
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--border-subtle),
+        transparent
+    );
+    margin: 2rem 0;
+}
+
+/* ================= PLOTLY CHART CARD ================= */
+.js-plotly-plot {
+    background: transparent !important;
+    border-radius: var(--radius-md);
+}
+
+/* ================= STATUS MESSAGES ================= */
+.stSuccess {
+    background: rgba(34, 197, 94, 0.15);
+    border-left: 4px solid var(--accent-success);
+}
+
+.stWarning {
+    background: rgba(249, 115, 22, 0.15);
+    border-left: 4px solid var(--accent-warning);
+}
+
+.stError {
+    background: rgba(239, 68, 68, 0.15);
+    border-left: 4px solid var(--accent-danger);
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media screen and (max-width: 768px) {
+    .block-container {
+        padding: 1rem;
+    }
+
+    section[data-testid="stVerticalBlock"] {
+        padding: 1.2rem;
+    }
+
+    .stButton > button {
+        width: 100%;
+    }
+}
