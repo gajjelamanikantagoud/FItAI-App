@@ -56,5 +56,4 @@ Unlike generic fitness apps, this system considers **individual body metrics, ac
 ### Output
 - Predicted **daily calorie requirement**
 
-### Model File
 
